@@ -37,16 +37,28 @@ function callPeer () {
     console.log("call");
     navigator.getUserMedia({ video:true},
             function (localMediaStream) {
-
-                var video = document.querySelector('video');
-                video.src = window.URL.createObjectURL(localMediaStream);
-
-                call.
                 var dest = $('#dest-id').val();
                 console.log(dest);
-
+                peer.call(dest , localMediaStream);
             } , erroCallback);
 }
+
+peer.on('call' , function (call) {
+    navigator.getUserMedia({ video:true},
+            function (localMediaStream) {
+
+
+
+                call.answer(localMediaStream)
+
+            } , erroCallback);
+
+    call.on('stream' , function (stream) {
+        var video = document.querySelector('video');
+        video.src = window.URL.createObjectURL(stream);
+    })
+
+})
 
 </script>
 </body>

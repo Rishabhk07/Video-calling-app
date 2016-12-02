@@ -10,11 +10,11 @@ app.use(express.static(path.join(__dirname , 'public')));
 
 app.use('/' , express.static(path.join(__dirname , 'public')));
 
+var port = process.env.PORT || 8191;
 
 
 
-
-srv = app.listen('8191' , ()=>{
+srv = app.listen(port , ()=>{
 console.log("server started at 8191");
 });
 
