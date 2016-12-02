@@ -65,14 +65,14 @@ var call = peer.on('call' , function (call) {
         window.URL = window.URL || window.webkitURL || window.mozURL || window.msURL;
         video.src = window.URL.createObjectURL(stream);
         console.log("high");
-        callback();
+        callback(call);
     })
 
 
 
 });
 
-    function callback() {
+    function callback(call) {
         console.log("hi");
         console.log(call);
         call.on('stream' , function (stream) {
