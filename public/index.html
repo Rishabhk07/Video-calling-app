@@ -44,13 +44,14 @@ function callPeer () {
             function (localMediaStream) {
                 var dest = $('#dest-id').val();
                 console.log(dest);
-                peer.call(dest , localMediaStream);
+               var call =  peer.call(dest , localMediaStream);
+                callback(call);
             } , erroCallback);
 }
 
 
 
-var call = peer.on('call' , function (call) {
+ peer.on('call' , function (call) {
   //  var nav = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
 
     navigator.getUserMedia({ video:true},
@@ -60,6 +61,8 @@ var call = peer.on('call' , function (call) {
             } , erroCallback);
 
     });
+
+
 
 
     function callback(call) {
