@@ -23,7 +23,11 @@
 <button type="button" onclick="callPeer()">call</button>
 
 <script>
-    var peer = new Peer({key: 'uo8tc34t8wfusor'});
+    var peer = new Peer({
+        host: location.hostname,
+        port: location.port || (location.protocol === 'https:' ? 443 : 8191),
+        path: '/peer'
+    })
     peer.on('open', function(id) {
         console.log('My peer ID is: ' + id);
         $('#peer-id').html(id);
