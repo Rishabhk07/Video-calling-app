@@ -24,8 +24,9 @@
 
 <script>
     var peer = new Peer({
-        host: location.hostname,
-        port: process.env.PORT || 8191,
+        host: "peercallkhanna.heroku.com",
+//        host: location.hostname,
+//        port: process.env.PORT || 8191,
         path: '/peer'
     })
     peer.on('open', function(id) {
