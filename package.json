@@ -1,0 +1,15 @@
+{
+  "name": "video_calling",
+  "version": "1.0.0",
+  "description": "a simple video calling app using peejs and webRTC",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rishabh khanna",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0",
+    "peer": "^0.2.8"
+  }
+}
