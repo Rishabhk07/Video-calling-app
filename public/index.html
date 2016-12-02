@@ -40,7 +40,7 @@
 function callPeer () {
     console.log("call");
     var nav = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
-    nav({ video:true},
+    nav.({ video:true},
             function (localMediaStream) {
                 var dest = $('#dest-id').val();
                 console.log(dest);
@@ -51,7 +51,7 @@ function callPeer () {
 peer.on('call' , function (call) {
     var nav = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
 
-    nav({ video:true},
+    nav.({ video:true},
             function (localMediaStream) {
 
 
