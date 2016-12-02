@@ -48,25 +48,27 @@ function callPeer () {
             } , erroCallback);
 }
 
-peer.on('call' , function (call) {
+
+
+var call = peer.on('call' , function (call) {
   //  var nav = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
 
     navigator.getUserMedia({ video:true},
             function (localMediaStream) {
-
-
-
                 call.answer(localMediaStream)
-
             } , erroCallback);
+
+
+
+
+
+});
 
     call.on('stream' , function (stream) {
         var video = document.querySelector('video');
         window.URL = window.URL || window.webkitURL || window.mozURL || window.msURL;
         video.src = window.URL.createObjectURL(stream);
     })
-
-})
 
 </script>
 </body>
