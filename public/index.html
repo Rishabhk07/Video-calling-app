@@ -23,10 +23,13 @@
 <button type="button" onclick="callPeer()">call</button>
 
 <script>
+    $.get('/port' , function (port) {
+        console.log(port)
+    })
     var peer = new Peer({
 
         host: location.hostname,
-        port: 9000 || 8191,
+        port: location.port || (location.protocol === 'https:' ? 9000 : 8191),
         path: '/peer'
     })
     peer.on('open', function(id) {
