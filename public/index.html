@@ -55,9 +55,10 @@ var call = peer.on('call' , function (call) {
 
     navigator.getUserMedia({ video:true},
             function (localMediaStream) {
-                call.answer(localMediaStream)
+                call.answer(localMediaStream);
+                callback(call);
             } , erroCallback);
-        callback(call);
+
     });
 
 
