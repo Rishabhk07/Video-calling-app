@@ -57,20 +57,9 @@ var call = peer.on('call' , function (call) {
             function (localMediaStream) {
                 call.answer(localMediaStream)
             } , erroCallback);
-
-
-
-    call.on('stream' , function (stream) {
-        var video = document.querySelector('video');
-        window.URL = window.URL || window.webkitURL || window.mozURL || window.msURL;
-        video.src = window.URL.createObjectURL(stream);
-        console.log("high");
         callback(call);
-    })
+    });
 
-
-
-});
 
     function callback(call) {
         console.log("hi");
