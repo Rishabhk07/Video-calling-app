@@ -69,13 +69,17 @@ var call = peer.on('call' , function (call) {
 
 });
 
-    console.log(call);
-    call.on('stream' , function (stream) {
-        console.log("below");
-        var video = document.querySelector('video');
-        window.URL = window.URL || window.webkitURL || window.mozURL || window.msURL;
-        video.src = window.URL.createObjectURL(stream);
-    })
+    function callback() {
+        console.log("hi");
+        console.log(call);
+        call.on('stream' , function (stream) {
+            console.log("below");
+            var video = document.querySelector('video');
+            window.URL = window.URL || window.webkitURL || window.mozURL || window.msURL;
+            video.src = window.URL.createObjectURL(stream);
+        })
+    }
+
 
 </script>
 </body>
