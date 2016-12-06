@@ -5,6 +5,7 @@ A video calling app uses WebRTC and PeerJS Library for making a peer to peer vid
 * chrome > 21
 * Opera  > 12
 * Firefox > 17 (requires media.navigator.enabled = true in about:config)
+* chorme for android
 
 ## Libraries Used
 1. PeerJs
